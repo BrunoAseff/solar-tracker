@@ -31,7 +31,6 @@ export function DatePickerDemo() {
       setDates(formattedDate);
       setDate(selectedDate);
     } else {
-      // Lidar com a situação em que selectedDate é undefined, se necessário
       console.log("Nenhuma data selecionada");
     }
   };
@@ -48,8 +47,8 @@ export function DatePickerDemo() {
       );
 
       const data = await response.json();
-      setSunrise(data.results.sunrise);
-      setSunset(data.results.sunset);
+      setSunrise(data.results.first_light);
+      setSunset(data.results.last_light);
       setDayLength(data.results.day_length);
     } catch (error) {
       console.error("Erro:", error);
@@ -59,7 +58,7 @@ export function DatePickerDemo() {
   return (
     <div
       className="flex flex-col h-screen justify-center items-center"
-      style={{ background: "linear-gradient(to right, #000428, #004e92)" }}
+      style={{ background: "linear-gradient(to right, #f3904f, #3b4371)" }}
     >
       <Card className="grid gap-10 mx-auto w-1/3 items-center p-4">
         <h1 className="text-xl font-semibold mb-4 text-center">
@@ -89,7 +88,7 @@ export function DatePickerDemo() {
               <Button
                 variant={"outline"}
                 className={cn(
-                  "w-[280px] justify-start text-left font-normal",
+                  "w-[280px] justify-start text-left font-normal mr-10",
                   !date && "text-muted-foreground"
                 )}
               >
@@ -106,7 +105,7 @@ export function DatePickerDemo() {
               />
             </PopoverContent>
           </Popover>
-          <Button className="mt-4 grid-cols-1" onClick={handleClick}>
+          <Button className="mt-4 grid-cols-1 " onClick={handleClick}>
             Consultar
           </Button>
 
