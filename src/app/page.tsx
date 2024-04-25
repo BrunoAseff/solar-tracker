@@ -59,9 +59,12 @@ export default function Home() {
   return (
     <div
       className="flex flex-col h-screen justify-center items-center"
-      style={{ background: "linear-gradient(to right, #f3904f, #3b4371)" }}
+      style={{
+        background:
+          "radial-gradient(at center top, rgb(180, 83, 9), rgb(253, 186, 116), rgb(159, 18, 57))",
+      }}
     >
-      <Card className="grid gap-10 mx-auto w-1/3 items-center p-4">
+      <Card className="grid gap-10 mx-auto w-1/3 items-center p-10">
         <h1 className="text-xl font-semibold mb-4 text-center">
           Rastreador Solar
         </h1>
@@ -89,7 +92,7 @@ export default function Home() {
               <Button
                 variant={"outline"}
                 className={cn(
-                  "w-[280px] justify-start text-left font-normal mr-10",
+                  "mt-4 flex justify-center w-[280px] justify-start text-left font-normal mr-10",
                   !date && "text-muted-foreground"
                 )}
               >
@@ -106,9 +109,15 @@ export default function Home() {
               />
             </PopoverContent>
           </Popover>
-          <Button className="mt-4 grid-cols-1 " onClick={handleClick}>
-            Consultar
-          </Button>
+          <div className="mt-4 flex justify-center">
+            {" "}
+            <Button
+              className="mt-4 grid-cols-1 flex justify-center"
+              onClick={handleClick}
+            >
+              Consultar
+            </Button>
+          </div>
 
           <div className="flex flex-col items-center mt-8">
             <div className="flex justify-between w-full">
