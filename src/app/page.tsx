@@ -134,4 +134,4 @@ export function Home() {
   );
 }
 
-export default Home;
+export { Home as default };
