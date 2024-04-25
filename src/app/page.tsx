@@ -16,7 +16,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export function Home() {
+export default function Home() {
   const [date, setDate] = React.useState<Date>();
 
   const [lat, setLat] = useState("");
@@ -133,5 +133,3 @@ export function Home() {
     </div>
   );
 }
-
-export { Home as default };
