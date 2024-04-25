@@ -16,8 +16,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export function DatePickerDemo() {
+export function Home() {
   const [date, setDate] = React.useState<Date>();
+
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
   const [dates, setDates] = useState("");
@@ -133,4 +134,4 @@ export function DatePickerDemo() {
   );
 }
 
-export default DatePickerDemo;
+export default Home;
